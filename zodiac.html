@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ผมว่าแล้วคุณต้องอ่าน</title>
+        <style>
+            body {
+                color: white;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">คำนวณราศีกันเถอะ</h1>
+        <div style="text-align: center; margin-top: 20px;">
+            <input type="number" id="day" placeholder="วัน (1-31)">
+            <input type="number" id="month" placeholder="เดือน (1-12)">
+        </div>
+        <div style="display: grid; place-items: center;"><button onclick="checkZodiac()">กดเพื่อไปต่อ</button></div>
+        <p style="text-align:center; font-size:30px;">ราศีของท่าน คือ <span id="result"></span></p>
+        <script>
+            function checkZodiac() {
+                let d=parseInt(document.getElementById('day').value);
+                let m=parseInt(document.getElementById('month').value);
+                let zodiac = "";
+                if(m==12) {
+                    if(22<=d && d<32) {
+                        zodiac="ราศีมังกร";
+                    } else if(d<22 && d>0) {
+                        zodiac="ราศีธนู";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==11) {
+                    if (22<=d && d<31) {
+                        zodiac="ราศีธนู";
+                    } else if(d<22 && d>0) {
+                        zodiac="ราศีพิจิก";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==10) {
+                    if (24<=d && d<32) {
+                        zodiac="ราศีพิจิก";
+                    } else if(d<24 && d>0) {
+                        zodiac="ราศีตุลย์";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==9) {
+                    if(23<=d && d<31) {
+                        zodiac="ราศีตุลย์";
+                    } else if(d<23 && d>0) {
+                        zodiac="ราศีกันย์";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==8) {
+                    if(23<=d && d<32) {
+                        zodiac="ราศีกันย์";
+                    } else if(d<23 && d>0) {
+                        zodiac="ราศีสิงห์";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==7) {
+                    if(23<=d && d<32) {
+                        zodiac="ราศีสิงห์";
+                    } else if(d<23 && d>0) {
+                        zodiac="ราศีกรกฎ";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==6) {
+                    if(22<=d && d<31) {
+                        zodiac="ราศีกรกฎ";
+                    } else if(d<22 && d>0) {
+                        zodiac="ราศีเมถุน";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==5) {
+                    if(21<=d && d<32) {
+                        zodiac="ราศีเมถุน";
+                    } else if(d<21 && d>0) {
+                        zodiac="ราศีพฤษภ";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==4) {
+                    if(20<=d && d<31) {
+                        zodiac="ราศีพฤษภ";
+                    } else if(d<20 && d>0) {
+                        zodiac="ราศีเมษ";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==3) {
+                    if(21<=d && d<32) {
+                        zodiac="ราศีเมษ";
+                    } else if(d<21 && d>0) {
+                        zodiac="ราศีมีน";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==2) {
+                    if(19<=d && d<30) {
+                        zodiac="ราศีมีน";
+                    } else if(d<19 && d>0) {
+                        zodiac="ราศีกุมภ์";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else if(m==1) {
+                    if(20<=d && d<32) {
+                        zodiac="ราศีกุมภ์";
+                    } else if(d<20 && d>0) {
+                        zodiac="ราศีมังกร";
+                    } else {
+                        zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                    }
+                } else {
+                    zodiac="ราศีน้ำตาล อะไร ?! ข้อมูลไม่ถูกต้อง ไปกรอกใหม่ ! เดี๋ยวนี้ !!!";
+                }      
+                document.getElementById('result').innerHTML=zodiac ;
+            }
+        </script>
+        <div style="display: grid; place-items: center;">
+            <button onclick="window.location.href='index.html'">กลับหน้าแรก</button>
+        </div>
+    </body>
+</html>
